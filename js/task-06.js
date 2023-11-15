@@ -2,13 +2,13 @@ const inputRef = document.querySelector('#validation-input');
 const maxLength = inputRef.dataset.length;
 
 inputRef.addEventListener('blur', () => {
-    if (inputRef.value.length > maxLength) {
-        inputRef.classList.add('invalid');
+    if (inputRef.value.length === Number(maxLength)) {
+        inputRef.classList.add('valid');
     } else if (inputRef.value.length === 0) {
         inputRef.classList.remove('valid');
         inputRef.classList.remove('invalid');
     } else {
-        inputRef.classList.add('valid');
+        inputRef.classList.add('invalid');
     }
 });
 inputRef.addEventListener('focus', () => {

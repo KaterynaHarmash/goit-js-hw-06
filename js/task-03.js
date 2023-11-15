@@ -14,9 +14,11 @@ const images = [
 ];
 
 const galleryRef = document.querySelector('ul.gallery');
+const elements = [];
 
 function createListElement({ url, alt } = {}) {
-  return galleryRef.insertAdjacentHTML('beforeend',`<li class='gallery__item'><img src='${url}' alt='${alt}' class='gallery__image'></li>`);
+  elements.push(`<li class='gallery__item'><img src='${url}' alt='${alt}' class='gallery__image'></li>`);
 }
 
 const galleryListMarkup = images.map(image => createListElement(image));
+galleryRef.insertAdjacentHTML('beforeend', elements.join(''));
